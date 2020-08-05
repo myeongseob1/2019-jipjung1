@@ -1,0 +1,12 @@
+http://theshybulb.com/2017/09/27/xor-neural-network.html
+
+https://github.com/bbongcol/first-steps-of-neural-network
+
+snowdeer.github.io/machine-learning/2018/01/09/recognize-mnist-data
+
+keraskorea.github.io/posts/2018-10-23-keras_autoencoder
+->convolutional 인코더 전까지(deep까지)
+
+red-pulse.tistory.com/188
+
+google colab으로 빠르게 돌릴 수 있다.

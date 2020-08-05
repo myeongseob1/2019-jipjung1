@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="title"><br>
+    출판사&nbsp;&nbsp;<input type="text" id="publisher"><br>
+    가격&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="price"><br>
+    페이지&nbsp;&nbsp;<input type="text" id="pages"><br><br>
+    <button onclick="input()">입력</button><br><br>
+    <table id='table1' border=1>
+        <tbody id='body1'>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+        </tbody>
+    </table>
+    <script>
+        function input() {
+            var books = new Array();
+            books[0] = document.getElementById('title');
+            books[1] = document.getElementById('publisher');
+            books[2] = document.getElementById('price');
+            books[3] = document.getElementById('pages');
+            drawTable(books, 6);
+        }
+        function drawTable(books, border) {
+            var tbl = document.getElementById('body1'), i;
+            for (i = 0; i < tbl.rows.length; i++) {
+                createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), books[i].value, 'col');
+            }
+            document.getElementById('table1').style.border=border;
+        }
+        function createCell(cell, text, style) {
+            var div = document.createElement('div'), 
+                txt = document.createTextNode(text);
+            div.appendChild(txt);                    
+            div.setAttribute('class', style);       
+            div.setAttribute('className', style);   
+            cell.appendChild(div);         
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>피보나치 수열</h1>
+    피보나치수열 10항  <input type="text" id="num">
+    피보나치수열 5항 <input type ="text" id ="num2">
+</body>
+<script>
+    function fibonacci(num) {
+        var answer = 0;
+        if (num <= 1) {
+            return num;
+        }
+        answer = fibonacci(num - 1) + fibonacci(num - 2);
+        return answer;
+    }
+    var result = document.getElementById('num');
+    result.value = fibonacci(10);
+    var result2 = document.getElementById('num2');
+    result2.value = fibonacci(5);
+</script>
+
+</html>

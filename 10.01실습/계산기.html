@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>계산기</title>
+   <script type="text/javascript">
+      var flag=false;//0이 있는 상태
+ 
+      function operation(num){
+         if (flag==false) {//초기화//0이 없는 상태로 만들기
+            //flag=false;
+            cal.result.value="";//값 초기화
+            flag= true;//0이 없는 상태가 됨
+         }
+ 
+         cal.result.value+=num;
+      }
+      function dream(){//result에 출력 함수
+         var str = cal.result.value;
+         var strArray = str.split('^');
+         var findValue = "^";
+         cal.result.value = eval(cal.result.value);
+      }
+      function c(){//clear버튼
+         if (flag==true) {//0이 없는 상태
+            flag=false;//0이 있는 상태
+         cal.result.value = "0";
+         }
+      }
+      function bs() {
+         cal.result.value = cal.result.value.substring(0, cal.result.value.length-1);
+            // substring 으로 0부터 value 길이에서 -1 한 만큼의 길이를 출력한다
+      }
+ 
+ 
+   </script>
+</head>
+<body>
+<div align="center">
+<p></p>
+<form name="cal">
+<table>
+   <!-- 첫번째 줄 -->
+   <tr>
+      <td colspan="6"><input style="text-align: right;" type="result" name="result" id ="result" value="0" ></td>
+   </tr>
+   <!-- 두번째 줄 -->
+   <tr>
+      <td align="center" colspan="3"><input type="button" style="background:skyblue" name="clear" value="C" onclick="c()"></td>
+      <td align="center" colspan="2"><input type="button" style="background:skyblue" name="oper" value="="
+         onclick="dream()"></td>
+      <td align="center"><input type="button" name="backspace" style="background:skyblue" value="<-"
+         onclick="bs()"></td>
+   </tr>
+   <!-- 세번째 줄 -->
+   <tr>
+      <td>
+         <input type="button" style="background:skyblue" value="1" onclick="operation('1')"></td>
+      <td align="center">
+         <input type="button"  value="2" style="background:skyblue" onclick="operation('2')"></td>
+      <td><input type="button"  value="3" style="background:skyblue" onclick="operation('3')"></td>
+      <td colspan="2">
+         <input type="button" name="p" value="+" style="background:skyblue" onclick="operation('+')"></td>
+    </tr>
+   <!-- 네번째 줄 -->
+   <tr>
+      <td><input type="button"  value="4" style="background:skyblue" onclick="operation(value)"></td>
+      <td align="center">
+         <input type="button"  value="5" style="background:skyblue" onclick="operation(value)"></td>
+      <td><input type="button"  value="6" style="background:skyblue" onclick="operation(value)"></td>
+      <td colspan="2">
+         <input type="button" style="background:skyblue" name="m" value="-" onclick="operation(value)"></td>
+   </tr>
+   <!-- 첫번째 줄 -->
+   <tr>
+      <td><input type="button"  value="7" style="background:skyblue" onclick="operation(value)"></td>
+      <td align="center">
+         <input type="button"  value="8" style="background:skyblue" onclick="operation(value)"></td>
+      <td><input type="button"  value="9" style="background:skyblue" onclick="operation(value)"></td>
+      <td colspan="2">
+         <input type="button" name="mul" style="background:skyblue" value="*" onclick="operation(value)"></td>
+   </tr>
+   <tr>
+      <td><input type="button" style="background:skyblue" value="0" onclick="operation(value)"></td>
+      <td><input type="button" name="plma" value="+/-" style="background:skyblue" onclick="reverse()"></td>
+      <td><input type="button" name="dot" value="." style="background:skyblue" onclick="operation(value)"></td>
+      <td colspan="2">
+         <input type="button" name="div" value="/" style="background:skyblue" onclick="operation(value)"></td>
+     </tr>
+</table>
+</div>
+</body>
+</html>

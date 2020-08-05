@@ -1,0 +1,11 @@
+cap_shape : convex0,bell1,sunken2,flat3
+cap_surface : smooth4,scaly5,fibrous6
+cap_color: brown7,yellow8,white9,gray10,red11,pink12,buff13,purple14,cinamon15
+bruises: yes,no
+odor: pungent,almond,anise,none,fishy,foul,spicy,musty
+gill_attach: 별 의미가없을듯
+gill_spacing: close,crowded
+gill_size: narrow,broad
+gill_color: black,brown,gray,pink,white,chocolate,purple,buff,yellow,orange
+stalk_shape: enlarging,tapering
+
